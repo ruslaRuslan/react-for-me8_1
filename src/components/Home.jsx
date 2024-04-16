@@ -1,6 +1,7 @@
-import React, {createContext, useState} from "react";
-export const TodoContext = createContext([])
-export const Home = () => {
+import React, { createContext, useState } from "react";
+export const TodoContext = createContext([]);
+
+export const Home = ({ children }) => {
   const [todoInput, setTodoInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [id, setID] = useState(0);
@@ -19,17 +20,20 @@ export const Home = () => {
     setTodoInput("");
   };
   return (
-    <div>
-      <h1>Home</h1>
-      <form onSubmit={addToDo}>
-        <input
-          type="text"
-          placeholder="enter todo"
-          value={todoInput}
-          onChange={(e) => setTodoInput(e.target.value)}
-        />
-        <input type="submit" value="add ToDo" />
-      </form>
-    </div>
+    <TodoContext.Provider value={todos}>
+      {children}
+      <div>
+        <h1>Home</h1>
+        <form onSubmit={addToDo}>
+          <input
+            type="text"
+            placeholder="enter todo"
+            value={todoInput}
+            onChange={(e) => setTodoInput(e.target.value)}
+          />
+          <input type="submit" value="add ToDo" />
+        </form>
+      </div>
+    </TodoContext.Provider>
   );
 };
