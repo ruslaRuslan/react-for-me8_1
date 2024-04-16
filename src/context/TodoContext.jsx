@@ -6,9 +6,12 @@ export const TodoContext = createContext([]);
 
 export const TodoContextApp = ({ children }) => {
   const [todos, setToDos] = useState([]);
-
+const obj ={
+    todos,
+    setToDos
+}
   return (
-    <TodoContext.Provider value={[todos, setToDos]}>
+    <TodoContext.Provider value={obj}>
       {children}
     </TodoContext.Provider>
   );

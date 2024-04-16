@@ -3,11 +3,10 @@ import { TodoContext } from "../context/TodoContext";
 
 export const Home = () => {
   const value = useContext(TodoContext);
-  const [todoInput, setTodoInput] = useState("");
+  const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
   const addToDo = (e) => {
     e.preventDefault();
-    console.log(value);
     setID(id + 1);
     value[1]([
       ...value[0],
@@ -17,8 +16,8 @@ export const Home = () => {
       },
     ]);
 
-    console.log(todos);
-    setTodoInput("");
+    console.log(value[0]);
+    setToDoInput("");
   };
   return (
     <div>
