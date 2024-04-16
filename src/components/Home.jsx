@@ -9,7 +9,10 @@ export const Home = () => {
     // console.log(e.target.todoInput.value);
     console.log(todoInput)
     setTodoInput("")
-    setTodos([...todos])
+    setTodos([...todos,{
+        id:2,
+        todoTitle:todoInput
+    }])
   }
   return (
     <div>
