@@ -41,8 +41,8 @@ export const Home = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}
-          className={}
-          onClick={changeStatus}>
+          className={isActive? "active" : "deactive"}
+          onClick={setIsActive(!isActive)}>
             {todo.todoTitle}
           </li>
         ))}

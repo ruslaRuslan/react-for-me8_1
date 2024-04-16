@@ -1,4 +1,8 @@
 .active{
-    text-decoration: none;
-    
+    text-decoration: none; 
+}
+
+.deactive{
+    text-decoration: line-through; 
+
 }
