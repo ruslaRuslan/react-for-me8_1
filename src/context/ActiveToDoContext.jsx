@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
 
-export const ActiveTodoContextApp = createContext({});
+export const ActiveTodoContext = createContext({});
 
 export const TodoContextApp = ({ children }) => {
-  const [activeTodos, setActiveToDos] = useState([]);
+  const [activeTodos, setactiveToDos] = useState([]);
   const obj = {
-    todos,
-    setToDos,
+    activeTodos,
+    setactiveToDos,
   };
   return <ActiveTodoContext.Provider value={obj}>{children}</ActiveTodoContext.Provider>;
 };

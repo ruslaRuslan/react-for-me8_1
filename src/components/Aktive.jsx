@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import { TodoContext } from "../context/TodoContext";
+import { ActiveTodoContext } from "../context/ActiveToDoContext";
+
 
 export const Aktive = () => {
-  const { todos, setToDos } = useContext(TodoContext);
-  console.log(todos);
+  const { activeTodos, setactiveTodos } = useContext(ActiveTodoContext);
+  console.log(activeTodos);
   return (
     <div>
       <ul>
-        {todos.map(todo => (
+        {activeTodos.map(todo => (
           <li key={todo.id}>{todo.todoTitle}</li>
         ))}
       </ul>

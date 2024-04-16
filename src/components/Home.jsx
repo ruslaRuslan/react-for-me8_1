@@ -4,6 +4,8 @@ import "./style.css";
 
 export const Home = () => {
   const { todos, setToDos } = useContext(TodoContext);
+  const { activeTodos, setactiveTodos } = useContext(ActiveTodoContext);
+
   const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
   const [isActive, setIsActive] = useState(true);
@@ -23,7 +25,8 @@ export const Home = () => {
     setToDoInput("");
   };
   const changeStatus = (todoId) => {
-
+    const findTodo = todos.find()
+    setactiveTodos([...activeTodos, ])
   };
   return (
     <div>
