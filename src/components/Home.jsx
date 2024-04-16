@@ -1,7 +1,7 @@
-import React, { createContext, useState } from "react";
-export const TodoContext = createContext([]);
+import React, { createContext, useContext, useState } from "react";
 
 export const Home = () => {
+ const value = useContext(TodoContext)
   const [todoInput, setTodoInput] = useState("");
   const [id, setID] = useState(0);
   const addToDo = (e) => {
