@@ -12,7 +12,10 @@ export const Home = () => {
     <div>
       <h1>Home</h1>
       <form onSubmit={addToDo}>
-        <input type="text" placeholder="enter todo" value={todoInput}/>
+        <input type="text" 
+        placeholder="enter todo"
+        value={todoInput} 
+        onChange={setTodoInput}/>
         <input type="submit" value="add ToDo" />
       </form>
     </div>
