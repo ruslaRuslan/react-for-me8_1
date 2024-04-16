@@ -20,7 +20,10 @@ export const Home = () => {
 
     console.log(todos);
     setToDoInput("");
-  };
+  }
+  const changeStatus = () => {
+console.log();
+  } 
   return (
     <div>
       <h1>Home</h1>
@@ -36,7 +39,9 @@ export const Home = () => {
 
       <ul>
         {todos.map(todo => (
-          <li key={todo.id}>{todo.todoTitle}</li>
+          <li key={todo.id}
+          onClick={changeStatus}
+          >{todo.todoTitle}</li>
         ))}
       </ul>
     </div>
