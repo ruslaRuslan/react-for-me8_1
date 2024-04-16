@@ -15,7 +15,7 @@ export const Home = () => {
         <input type="text" 
         placeholder="enter todo"
         value={todoInput} 
-        onChange={setTodoInput}/>
+        onChange={ (e)=> setTodoInput(e.target.value)}/>
         <input type="submit" value="add ToDo" />
       </form>
     </div>
