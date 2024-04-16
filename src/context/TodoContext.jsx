@@ -1,14 +1,12 @@
-import { Children, createContext } from "react";
-const todo ={
-    name:"Qasim",
-    surname:"Ali",
-}
-export const TodoContext = createContext(todo)
+import { createContext } from "react";
 
-export const TodoContextApp = ({children})=>{
-    return(
-        <TodoContext.Provider value={todo}>
-            {children}
-        </TodoContext.Provider>
-    )
-}
+export const TodoContext = createContext([]);
+
+export const TodoContextApp = ({ children }) => {
+    const [todos, setTodos] = useState([]);
+
+  return (
+    <TodoContext.Provider value={todo}>
+    {children}
+    </TodoContext.Provider>);
+};

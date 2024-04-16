@@ -1,9 +1,8 @@
 import React, { createContext, useState } from "react";
 export const TodoContext = createContext([]);
 
-export const Home = ({ children }) => {
+export const Home = () => {
   const [todoInput, setTodoInput] = useState("");
-  const [todos, setTodos] = useState([]);
   const [id, setID] = useState(0);
   const addToDo = (e) => {
     e.preventDefault();
@@ -21,7 +20,7 @@ export const Home = ({ children }) => {
   };
   return (
     <TodoContext.Provider value={todos}>
-      {children}
+     
       <div>
         <h1>Home</h1>
         <form onSubmit={addToDo}>
