@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
-import "./style.css"
+import "./style.css";
 
 export const Home = () => {
   const { todos, setToDos } = useContext(TodoContext);
   const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(true);
   const addToDo = (e) => {
     e.preventDefault();
 
@@ -22,8 +22,8 @@ export const Home = () => {
     console.log(todos);
     setToDoInput("");
   };
-  const changeStatus = () => {
-    console.log();
+  const changeStatus = (todoId) => {
+
   };
   return (
     <div>
@@ -40,9 +40,11 @@ export const Home = () => {
 
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}
-          className={isActive? "active" : "deactive"}
-          onClick={setIsActive(!isActive)}>
+          <li
+            key={todo.id}
+            className={isActive ? "active" : "deactive"}
+            onClick={() => changeStatus(todo.id)}
+          >
             {todo.todoTitle}
           </li>
         ))}
