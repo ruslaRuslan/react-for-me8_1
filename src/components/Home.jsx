@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
+import "./style.css"
 
 export const Home = () => {
   const { todos, setToDos } = useContext(TodoContext);
   const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
-  const [isActive, setIsActive] = useState(true)
+  const [isActive, setIsActive] = useState(false)
   const addToDo = (e) => {
     e.preventDefault();
 
