@@ -7,7 +7,7 @@ export const Home = () => {
   const [id, setID]= useState(0)
   const addToDo = (e) => {
     e.preventDefault();
-    setID(id)
+    setID(id+1)
     setTodos([
       ...todos,
       {
