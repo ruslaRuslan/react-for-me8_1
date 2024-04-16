@@ -25,7 +25,7 @@ export const Home = () => {
     setToDoInput("");
   };
   const changeStatus = (todoId) => {
-    const findTodo = todos.find()
+    const findTodo = todos.find(item => item.id === todoId)
     setactiveTodos([...activeTodos, ])
   };
   return (
