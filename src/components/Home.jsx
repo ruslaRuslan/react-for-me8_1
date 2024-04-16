@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
 
-
-export const Home = () => { 
-  const {todos, setToDos} = useContext(TodoContext);
+export const Home = () => {
+  const { todos, setToDos } = useContext(TodoContext);
   const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
+  const [isActive, setIsActive] = useState(true)
   const addToDo = (e) => {
     e.preventDefault();
-  
+
     setID(id + 1);
     setToDos([
       ...todos,
@@ -20,10 +20,10 @@ export const Home = () => {
 
     console.log(todos);
     setToDoInput("");
-  }
+  };
   const changeStatus = () => {
-console.log();
-  } 
+    console.log();
+  };
   return (
     <div>
       <h1>Home</h1>
@@ -38,13 +38,14 @@ console.log();
       </form>
 
       <ul>
-        {todos.map(todo => (
+        {todos.map((todo) => (
           <li key={todo.id}
-          onClick={changeStatus}
-          >{todo.todoTitle}</li>
+          className={}
+          onClick={changeStatus}>
+            {todo.todoTitle}
+          </li>
         ))}
       </ul>
     </div>
-    
   );
 };
