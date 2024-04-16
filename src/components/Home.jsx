@@ -3,19 +3,24 @@ import { TodoContext } from "../context/TodoContext";
 
 export const Home = () => {
   const [todoInput, setTodoInput] = useState("");
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
   const addToDo = (e) => {
     e.preventDefault();
-    console.log(e.target.todoInput.value);
-  };
+    // console.log(e.target.todoInput.value);
+    console.log(todoInput)
+    setTodoInput("")
+    setTodos([...todos])
+  }
   return (
     <div>
       <h1>Home</h1>
       <form onSubmit={addToDo}>
-        <input type="text" 
-        placeholder="enter todo"
-        value={todoInput} 
-        onChange={ (e)=> setTodoInput(e.target.value)}/>
+        <input
+          type="text"
+          placeholder="enter todo"
+          value={todoInput}
+          onChange={(e) => setTodoInput(e.target.value)}
+        />
         <input type="submit" value="add ToDo" />
       </form>
     </div>
