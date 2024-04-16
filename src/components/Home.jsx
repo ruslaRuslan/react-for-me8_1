@@ -1,22 +1,24 @@
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
 
-export const Home = () => {
-  const value = useContext(TodoContext);
+
+export const Home = () => { 
+  const {todos, setToDos} = useContext(TodoContext);
   const [todoInput, setToDoInput] = useState("");
   const [id, setID] = useState(0);
   const addToDo = (e) => {
     e.preventDefault();
+  
     setID(id + 1);
-    value[1]([
-      ...value[0],
+    setToDos([
+      ...todos,
       {
         id: id,
         todoTitle: todoInput,
       },
     ]);
 
-    console.log(value[0]);
+    console.log(todos);
     setToDoInput("");
   };
   return (
@@ -27,10 +29,17 @@ export const Home = () => {
           type="text"
           placeholder="enter todo"
           value={todoInput}
-          onChange={(e) => setTodoInput(e.target.value)}
+          onChange={(e) => setToDoInput(e.target.value)}
         />
         <input type="submit" value="add ToDo" />
       </form>
+
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>{todo.todoTitle}</li>
+        ))}
+      </ul>
     </div>
+    
   );
 };

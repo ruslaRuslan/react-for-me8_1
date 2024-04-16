@@ -1,18 +1,12 @@
 import { createContext, useState } from "react";
-const obj ={
-    
-}
-export const TodoContext = createContext([]);
+
+export const TodoContext = createContext({});
 
 export const TodoContextApp = ({ children }) => {
   const [todos, setToDos] = useState([]);
-const obj ={
+  const obj = {
     todos,
-    setToDos
-}
-  return (
-    <TodoContext.Provider value={obj}>
-      {children}
-    </TodoContext.Provider>
-  );
+    setToDos,
+  };
+  return <TodoContext.Provider value={obj}>{children}</TodoContext.Provider>;
 };
